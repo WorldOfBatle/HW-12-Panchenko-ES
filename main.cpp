@@ -24,7 +24,13 @@ int main() {
     const double EPS = 1e-9;
     for (double x = a; x <= b + EPS; x += h) {
         std::cout << x << "\t";
-        // позднее обработаем y / исключения
+        try {
+            double y = calculateFunction(x);
+            std::cout << y;
+        }
+        catch (const std::domain_error& e) {
+            std::cout << e.what();
+        }
         std::cout << "\n";
     }
 
