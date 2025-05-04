@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>   // для std::domain_error
 #include <cmath>        // для std::sqrt
+#include <iomanip>     // для std::setprecision, std::fixed
 
 // Вычисляет y = sqrt(5 − x^3) или бросает domain_error
 double calculateFunction(double x){
@@ -23,10 +24,10 @@ int main() {
 
     const double EPS = 1e-9;
     for (double x = a; x <= b + EPS; x += h) {
-        std::cout << x << "\t";
+        std::cout << std::fixed << std::setprecision(3) << x << "\t";
         try {
             double y = calculateFunction(x);
-            std::cout << y;
+            std::cout << std::fixed << std::setprecision(3) << y;
         }
         catch (const std::domain_error& e) {
             std::cout << e.what();
