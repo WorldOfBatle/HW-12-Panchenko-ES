@@ -12,5 +12,11 @@ double calculateFunction(double x){
 }
 
 int main() {
+    std::cout << "\n--- Таблица y = sqrt(5 - x^3) ---\n";
+
+    std::cout << "Введите a, b и шаг h: ";
+    double a = 0.0, b = 0.0, h = 0.0;
+    std::cin >> a >> b >> h;
+
     return 0;
 }
