@@ -18,5 +18,15 @@ int main() {
     double a = 0.0, b = 0.0, h = 0.0;
     std::cin >> a >> b >> h;
 
+    std::cout << "\n   x\t     y\n";
+    std::cout << "-----------------------\n";
+
+    const double EPS = 1e-9;
+    for (double x = a; x <= b + EPS; x += h) {
+        std::cout << x << "\t";
+        // позднее обработаем y / исключения
+        std::cout << "\n";
+    }
+
     return 0;
 }
